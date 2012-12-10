@@ -14,10 +14,16 @@ define('DATETIME_MYSQL', 'Y-m-d H:i:s');
 // Initialisation de la timezone
 date_default_timezone_set('Europe/Paris');
 
+// Gestion des chargement automatique
+require_once ('./_inc/class/autoloader.class.php');
+$monAutoload = new Autoloader();
 // Gestion du debugage
-require_once ('./_inc/function/mydebug.coll.php');
 MyDebug::initialisation();
 
+// Maj du loader
+$monAutoload->setFonctionTrace('MyDebug::trace');
+
+// gestion des erreures
 error_reporting(E_ALL);
 ini_set('display_errors', 'stderr');
 ini_set ('log_errors ',1);
@@ -43,8 +49,7 @@ function exception_handler($excep) {
 
 set_error_handler("error_handler");
 //set_exception_handler("exception_handler");
-require_once ('./_inc/class/autoloader.coll.php');
-MonAutoload = new Autoloader();
+
 // Chargement des package
 
 // gestion de la session et des droits

@@ -10,7 +10,7 @@
  * @filesource mydb.class.php
  * @access public
  */
-class MyDB extends PDO {
+class MyDB extends PDOAdapter {
 	/**
 	 * MyDB::__construct()
 	 * 
@@ -26,27 +26,17 @@ class MyDB extends PDO {
         switch ($settings['database']['driver']){ 
         	case 'mysql':
                 $myConnect = New ConnexionMySql();
-                $myConnect->
+                $myConnect->setHost($settings['database']['host'])
+                    ->setPort(((!empty($settings['database']['port'])) ? $settings['database']['port'] : ''))
+                    ->setDbName($settings['database']['schema']);
+                mydebug::traceVar($myConnect->getDns(), 'dns');
+                $myConnect->setUser($settings['DBuser']['username'])
+                    ->setMdp($settings['DBuser']['password']);
+                parent::__construct($myConnect);   
                 break;
         	default :
                 throw New DomainException("Le driver de la base de donnée n'est pas reconnue");
         }
-
-        
-        
-
-
-		$dns = . ':host=' . $settings['database']['host'] . ((!empty($settings['database']['port'])) ?
-			(';port=' . $settings['database']['port']) : '') . ';dbname=' . $settings['database']['schema'];
-		mydebug::traceVar($dns, 'dns');
-
-		try {
-			parent::__construct($dns, $settings['DBuser']['username'], $settings['DBuser']['password']);
-		}
-		catch (PDEException $pdoExcep) {
-			MyDebug::trace("Problème lors de la connection à la base de donnée");
-		}
-
 	}
 
 	private function conforme() {
@@ -74,52 +64,6 @@ class MyDB extends PDO {
 
 		// lacement de la requete
 		$this->exec($rqSQL);
-	}
-
-	public function exporte() {
-		MyDebug::traceFonction();
-		//TODO: Faire la fonction d'export de base
-
-	}
-
-	public function importe($fichierSQL) {
-		MyDebug::traceFonction();
-		//TODO: Faire la fonction d'import de base
-
-	}
-
-	public function exec($rqSQL) {
-		MyDebug::traceFonction();
-
-		$retour = 0;
-		try {
-			// nétoyage de la requete sql
-			$rqSQL = self::cleanSql($rqSQL);
-			// suppression du dernier ; pour eviter une requète vide
-			if (substr($rqSQL, -1) == ";")
-				$rqSQL = substr($rqSQL, 0, -1);
-			// séparation en plusieure requètes
-			$lstRqSQL = explode(';', $rqSQL);
-			// execution de chaque requète
-			foreach ($lstRqSQL as $sql) {
-				$sql = trim($sql);
-				if (substr($rqSQL, -1) != ";")
-					$rqSQL .= ';';
-				$retour += parent::exec($sql);
-			}
-		}
-		catch (PDOException $pdoExcep) {
-			$codeErreur = parent::errorCode();
-			MyDebug::trace("Impossible d'exécuter la requète [{$codeErreur}].");
-		}
-
-		return $retour;
-	}
-
-	public static function cleanSql($rqSQL) {
-		$rqSQL = preg_replace("/--.*\n/", "\n", $rqSQL);
-		$rqSQL = trim($rqSQL);
-		return $rqSQL;
 	}
 
 }
