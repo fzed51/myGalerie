@@ -19,7 +19,7 @@ class Autoloader{
 			$this->extensionClass     = '.class.php';
 			$this->extensionInterface = '.inter.php';
 			$this->extensionFonction  = '.coll.php';
-            $this->fonctionTrace      = null;
+			$this->fonctionTrace      = null;
 	}
 
 	protected function autoload($class) {
