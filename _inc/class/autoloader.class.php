@@ -13,9 +13,9 @@ class Autoloader{
     private $fonctionTrace;
 
 	public function __construct(){
-			$this->dossierClass       = './inc/';
-			$this->dossierInterface   = './inc/int/';
-			$this->dossierFonction    = './inc/';
+			$this->dossierClass       = './_inc/class/';
+			$this->dossierInterface   = './_inc/interface/';
+			$this->dossierFonction    = './_inc/function/';
 			$this->extensionClass     = '.class.php';
 			$this->extensionInterface = '.inter.php';
 			$this->extensionFonction  = '.coll.php';
