@@ -19,11 +19,24 @@ class MyDB extends PDO {
 	 */
 	public function __construct($file = INI_FILE) {
 		MyDebug::traceFonction();
-
+        
 		if (!$settings = parse_ini_file($file, true))
 			throw new exception("Impossible d'ouvrir '$file'");
+        
+        switch ($settings['database']['driver']){ 
+        	case 'mysql':
+                $myConnect = New ConnexionMySql();
+                $myConnect->
+                break;
+        	default :
+                throw New DomainException("Le driver de la base de donnée n'est pas reconnue");
+        }
 
-		$dns = $settings['database']['driver'] . ':host=' . $settings['database']['host'] . ((!empty($settings['database']['port'])) ?
+        
+        
+
+
+		$dns = . ':host=' . $settings['database']['host'] . ((!empty($settings['database']['port'])) ?
 			(';port=' . $settings['database']['port']) : '') . ';dbname=' . $settings['database']['schema'];
 		mydebug::traceVar($dns, 'dns');
 
