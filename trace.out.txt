@@ -1,0 +1,147 @@
+
+fX - +----------------------------------------------------------+
+fX \ |  le 3/08/2012 à 14:35:02                                 |
+fX \ |  Utilisateur                                             |
+fX \ |  - IP         : 127.0.0.1                                |
+fX \ |  - OS         : WinXP                                    |
+fX \ |  - navigateur : IE 7.0                                   |
+fX \ |  /myGalerie/index.php                                    |
+fX \ |  - [COOKIE] -> [PHPSESSID]='1412sn2bdl923c4mumonu899n5'  |
+fX \ +----------------------------------------------------------+
+
+fX - Chargement de la class(FlagsEnum).
+fX - Chargement de la class(Enum).
+fX - manager.php[66]> require_once()> Enum:__construct('ADMIN', 'USER', 'VISIT')  [721.148ko/7.346Mo]
+fX - enum.class.php[11]> Enum:__construct()> FlagsEnum:add('ADMIN')  [722.609ko/7.346Mo]
+fX - enum.class.php[11]> Enum:__construct()> FlagsEnum:add('USER')  [722.813ko/7.346Mo]
+fX - enum.class.php[11]> Enum:__construct()> FlagsEnum:add('VISIT')  [722.891ko/7.346Mo]
+fX - index.php[5]> FlagsEnum:setMulti('ADMIN', 'USER')  [713.711ko/7.346Mo]
+fX - ADMIN (1), USER (2), VISIT (4)
+fX - Chargement de la class(MyDB).
+fX - index.php[9]> MyDB:__construct()  [755.18ko/7.346Mo]
+fX - dns = mysql:host=localhost;dbname=myGalerie
+fX - Chargement de la class(Personne).
+fX - index.php[11]> Personne:__construct()  [790.609ko/7.346Mo]
+fX - personne.class.php[40]> Personne:__construct()> Enum:__get('ADMIN')  [792.469ko/7.346Mo]
+fX - index.php[13]> FlagsEnum:getMulti(3)  [791.164ko/7.346Mo]
+fX - acces = Array
+fX \ (
+fX \     [0] => ADMIN
+fX \     [1] => USER
+fX \ )
+fX - index.php[15]> FlagsEnum:checkIn(3, 1)  [791.234ko/7.346Mo]
+fX - index.php[17]> MyDB:setup()  [791.055ko/7.346Mo]
+fX - Chargement de la class(myFichier).
+fX - mydb.class.php[60]> MyDB:setup()> myFichier:charge('./_data/structure.sql')  [820.039ko/7.346Mo]
+fX - mydb.class.php[63]> MyDB:setup()> MyDB:exec('
+fX \ -- Structure de l...'(3067))  [826.008ko/7.346Mo]
+
+Ty - +----------------------------------------------------------+
+Ty \ |  le 3/08/2012 à 14:35:12                                 |
+Ty \ |  Utilisateur                                             |
+Ty \ |  - IP         : 127.0.0.1                                |
+Ty \ |  - OS         : WinXP                                    |
+Ty \ |  - navigateur : IE 7.0                                   |
+Ty \ |  /myGalerie/index.php                                    |
+Ty \ |  - [COOKIE] -> [PHPSESSID]='1412sn2bdl923c4mumonu899n5'  |
+Ty \ +----------------------------------------------------------+
+
+Ty - Chargement de la class(FlagsEnum).
+Ty - Chargement de la class(Enum).
+Ty - manager.php[66]> require_once()> Enum:__construct('ADMIN', 'USER', 'VISIT')  [721.164ko/7.346Mo]
+Ty - enum.class.php[11]> Enum:__construct()> FlagsEnum:add('ADMIN')  [722.625ko/7.346Mo]
+Ty - enum.class.php[11]> Enum:__construct()> FlagsEnum:add('USER')  [722.828ko/7.346Mo]
+Ty - enum.class.php[11]> Enum:__construct()> FlagsEnum:add('VISIT')  [722.906ko/7.346Mo]
+Ty - index.php[5]> FlagsEnum:setMulti('ADMIN', 'USER')  [713.727ko/7.346Mo]
+Ty - ADMIN (1), USER (2), VISIT (4)
+Ty - Chargement de la class(MyDB).
+Ty - index.php[9]> MyDB:__construct()  [755.18ko/7.346Mo]
+Ty - dns = mysql:host=localhost;dbname=myGalerie
+Ty - Chargement de la class(Personne).
+Ty - index.php[11]> Personne:__construct()  [790.617ko/7.346Mo]
+Ty - personne.class.php[40]> Personne:__construct()> Enum:__get('ADMIN')  [792.461ko/7.346Mo]
+Ty - index.php[13]> FlagsEnum:getMulti(3)  [791.164ko/7.346Mo]
+Ty - acces = Array
+Ty \ (
+Ty \     [0] => ADMIN
+Ty \     [1] => USER
+Ty \ )
+Ty - index.php[15]> FlagsEnum:checkIn(3, 1)  [791.234ko/7.346Mo]
+Ty - index.php[17]> MyDB:setup()  [791.055ko/7.346Mo]
+Ty - Chargement de la class(myFichier).
+Ty - mydb.class.php[60]> MyDB:setup()> myFichier:charge('./_data/structure.sql')  [820.039ko/7.346Mo]
+Ty - mydb.class.php[63]> MyDB:setup()> MyDB:exec('
+Ty \ -- Structure de l...'(3067))  [826.008ko/7.346Mo]
+
+VL - +----------------------------------------------------------+
+VL \ |  le 3/08/2012 à 14:35:21                                 |
+VL \ |  Utilisateur                                             |
+VL \ |  - IP         : 127.0.0.1                                |
+VL \ |  - OS         : WinXP                                    |
+VL \ |  - navigateur : IE 7.0                                   |
+VL \ |  /myGalerie/index.php                                    |
+VL \ |  - [COOKIE] -> [PHPSESSID]='1412sn2bdl923c4mumonu899n5'  |
+VL \ +----------------------------------------------------------+
+
+VL - Chargement de la class(FlagsEnum).
+VL - Chargement de la class(Enum).
+VL - manager.php[66]> require_once()> Enum:__construct('ADMIN', 'USER', 'VISIT')  [721.164ko/7.346Mo]
+VL - enum.class.php[11]> Enum:__construct()> FlagsEnum:add('ADMIN')  [722.625ko/7.346Mo]
+VL - enum.class.php[11]> Enum:__construct()> FlagsEnum:add('USER')  [722.828ko/7.346Mo]
+VL - enum.class.php[11]> Enum:__construct()> FlagsEnum:add('VISIT')  [722.906ko/7.346Mo]
+VL - index.php[5]> FlagsEnum:setMulti('ADMIN', 'USER')  [713.727ko/7.346Mo]
+VL - ADMIN (1), USER (2), VISIT (4)
+VL - Chargement de la class(MyDB).
+VL - index.php[9]> MyDB:__construct()  [755.18ko/7.346Mo]
+VL - dns = mysql:host=localhost;dbname=myGalerie
+VL - Chargement de la class(Personne).
+VL - index.php[11]> Personne:__construct()  [790.617ko/7.346Mo]
+VL - personne.class.php[40]> Personne:__construct()> Enum:__get('ADMIN')  [792.461ko/7.346Mo]
+VL - index.php[13]> FlagsEnum:getMulti(3)  [791.164ko/7.346Mo]
+VL - acces = Array
+VL \ (
+VL \     [0] => ADMIN
+VL \     [1] => USER
+VL \ )
+VL - index.php[15]> FlagsEnum:checkIn(3, 1)  [791.234ko/7.346Mo]
+VL - index.php[17]> MyDB:setup()  [791.055ko/7.346Mo]
+VL - Chargement de la class(myFichier).
+VL - mydb.class.php[60]> MyDB:setup()> myFichier:charge('./_data/structure.sql')  [820.039ko/7.346Mo]
+VL - mydb.class.php[63]> MyDB:setup()> MyDB:exec('
+VL \ -- Structure de l...'(3067))  [826.008ko/7.346Mo]
+
+fM - +------------------------------+
+fM \ |  le 3/08/2012 à 14:37:00     |
+fM \ |  Utilisateur                 |
+fM \ |  - IP         : 127.0.0.1    |
+fM \ |  - OS         : WinXP        |
+fM \ |  - navigateur : Chrome 18.0  |
+fM \ |  /myGalerie/index.php        |
+fM \ +------------------------------+
+
+fM - Chargement de la class(FlagsEnum).
+fM - Chargement de la class(Enum).
+fM - manager.php[66]> require_once()> Enum:__construct('ADMIN', 'USER', 'VISIT')  [721.156ko/7.346Mo]
+fM - enum.class.php[11]> Enum:__construct()> FlagsEnum:add('ADMIN')  [722.617ko/7.346Mo]
+fM - enum.class.php[11]> Enum:__construct()> FlagsEnum:add('USER')  [722.82ko/7.346Mo]
+fM - enum.class.php[11]> Enum:__construct()> FlagsEnum:add('VISIT')  [722.898ko/7.346Mo]
+fM - index.php[5]> FlagsEnum:setMulti('ADMIN', 'USER')  [713.719ko/7.346Mo]
+fM - ADMIN (1), USER (2), VISIT (4)
+fM - Chargement de la class(MyDB).
+fM - index.php[9]> MyDB:__construct()  [755.18ko/7.346Mo]
+fM - dns = mysql:host=localhost;dbname=myGalerie
+fM - Chargement de la class(Personne).
+fM - index.php[11]> Personne:__construct()  [790.609ko/7.346Mo]
+fM - personne.class.php[40]> Personne:__construct()> Enum:__get('ADMIN')  [792.461ko/7.346Mo]
+fM - index.php[13]> FlagsEnum:getMulti(3)  [791.164ko/7.346Mo]
+fM - acces = Array
+fM \ (
+fM \     [0] => ADMIN
+fM \     [1] => USER
+fM \ )
+fM - index.php[15]> FlagsEnum:checkIn(3, 1)  [791.234ko/7.346Mo]
+fM - index.php[17]> MyDB:setup()  [791.055ko/7.346Mo]
+fM - Chargement de la class(myFichier).
+fM - mydb.class.php[60]> MyDB:setup()> myFichier:charge('./_data/structure.sql')  [820.039ko/7.346Mo]
+fM - mydb.class.php[63]> MyDB:setup()> MyDB:exec('
+fM \ -- Structure de l...'(3067))  [826.008ko/7.346Mo]
