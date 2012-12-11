@@ -16,12 +16,13 @@ date_default_timezone_set('Europe/Paris');
 
 // Gestion des chargement automatique
 require_once ('./_inc/class/autoloader.class.php');
-$monAutoload = new Autoloader();
+$loader = new Autoloader();
+$loader->register();
 // Gestion du debugage
 MyDebug::initialisation();
 
 // Maj du loader
-$monAutoload->setFonctionTrace('MyDebug::trace');
+$loader->setFonctionTrace('MyDebug::trace');
 
 // gestion des erreures
 error_reporting(E_ALL);
@@ -29,17 +30,18 @@ ini_set('display_errors', 'stderr');
 ini_set ('log_errors ',1);
 ini_set ('html_errors ',0);
 if (isset($_SERVER['SCRIPT_NAME'])){
-	ini_set('error_log', './{$_SERVER['SCRIPT_NAME']}.err.log');
+	ini_set('error_log', "./{$_SERVER['SCRIPT_NAME']}.err.log");
 }else{
-	ini_set('error_loge', './erreurs.log';
+	ini_set('error_loge', './erreurs.log');
 }
 
 // Gestion des erreurs
 function error_handler($errno, $errstr, $errfile = '', $errline = 0, array $errcontext = array()) {
 
-	MyDebug::trace("Erreur : '$errstr'($errno) ->{$errfile}[$errline]");
+	MyDebug::trace("Erreur : ($errno)'$errstr' ->{$errfile}[$errline]");
 
-	throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
+	//throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
+    return true;
 }
 
 function exception_handler($excep) {

@@ -1,6 +1,6 @@
 <?php
 
-require_once ('manager.php');
+require_once ('core.php');
 
 $acces = $droits->setMulti('ADMIN', 'USER');
 
@@ -20,7 +20,7 @@ $db->setup();
 <!DOCTYPE HTML>
 <html lang="fr-FR" >
 <head>
-	<meta charset="UTF-8" >
+	<meta charset="UTF-8" />
 	<title>mon album photo</title>
 </head>
 <body>

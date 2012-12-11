@@ -1,6 +1,6 @@
 <?php
 
-class ConnexionMySql extends ConnexionPDO implements iConnexionPDO {
+class ConnexionMySql extends OptionSetter implements iConnexionPDO {
 	private $host;
     private $port;
 	private $dbname;
@@ -8,6 +8,7 @@ class ConnexionMySql extends ConnexionPDO implements iConnexionPDO {
 	private $mdp;
 
 	public function __construct($host = '', $port = '', $dbname = '', $user = '', $mdp = '') {
+        $this->listeOption = array('PDO::ATTR_PERSISTENT');	   
 		$this->host = $host;
 		$this->port = $port;
 		$this->dbname = $dbname;
@@ -42,12 +43,13 @@ class ConnexionMySql extends ConnexionPDO implements iConnexionPDO {
 
 	public function getDns() {
 		$dns = '';
-		$dns += '"mysql:';
-		$dns += "host={$this->host};";
+		$dns .= 'mysql:';
+		$dns .= "host={$this->host};";
         if (!empty($this->port))
-			$dns += "port={$this->port};";
-		$dns += "dbname={$this->dbname}";
-		return $dns}
+			$dns .= "port={$this->port};";
+		$dns .= "dbname={$this->dbname}";
+		return $dns;
+    }
 
 	public function getUser() {
 		return $this->user;

@@ -4,7 +4,7 @@ class PDOAdapter extends PDO {
         try {
 			parent::__construct($connex->getDns(), $connex->getUser(), $connex->getMdp());   
 		}
-		catch (PDEException $pdoExcep) {
+		catch (PDOException $pdoExcep) {
 			MyDebug::trace("Problème lors de la connection à la base de donnée");
             MyDebug::trace($pdoExcep->getMessage());
 		}

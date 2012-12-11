@@ -23,7 +23,6 @@ class Autoloader{
 	}
 
 	protected function autoload($class) {
-        $this->trace("<!-- load : $class -->");
 		if (!class_exists($class, false)) {
 			$this->trace("Chargement de la class($class).");
 			$nomFichier = strtolower($class);
@@ -82,7 +81,7 @@ class Autoloader{
     public function setFonctionTrace(/*callback*/ $fonction){
         if(is_callable($fonction)){
             $this->fonctionTrace = $fonction;
-            if(count($this->mess)>0){
+            if(count($this->messageTace)>0){
                 $this->purgeTrace();
             }
         }else{
